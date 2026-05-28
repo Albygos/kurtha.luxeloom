@@ -1,0 +1,18 @@
+DirectoryIndex index.php index.html
+
+RewriteEngine On
+# RewriteBase /
+
+# Route sitemap.xml to sitemap.php
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# Exclude existing files and directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Route Clean Product URLs (e.g. /product/some-product-title.html) to index.php
+RewriteRule ^product/([a-zA-Z0-9\-]+)\.html$ index.php?product=$1 [QSA,L]
+
+# Route Clean Keyword URLs (e.g. /some-keyword-slug.html) to index.php
+RewriteRule ^([a-zA-Z0-9\-]+)\.html$ index.php?slug=$1 [QSA,L]

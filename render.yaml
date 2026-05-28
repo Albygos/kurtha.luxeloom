@@ -1,0 +1,7 @@
+services:
+  web:
+    type: web
+    env: php
+    buildCommand: ""
+    startCommand: "php -S 0.0.0.0:8080 -t ."
+    plan: starter
