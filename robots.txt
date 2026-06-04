@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+Sitemap: https://kurta.luxeloom.co/sitemap.php
+Sitemap: https://kurta.luxeloom.co/sitemap2.php
