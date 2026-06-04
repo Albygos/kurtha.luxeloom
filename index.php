@@ -369,20 +369,20 @@ $productOffer = [
             "addressCountry" => "IN"
         ],
         "deliveryTime" => [
-            "@type" => "ShippingDeliveryTime",
-            "handlingTime" => [
-                "@type" => "QuantitativeValue",
-                "minValue" => 0,
-                "maxValue" => 1,
-                "unitCode" => "DAY"
-            ],
-            "transitTime" => [
-                "@type" => "ShippingDeliveryTime",
-                "minValue" => 2,
-                "maxValue" => 5,
-                "unitCode" => "DAY"
-            ]
-        ]
+    "@type" => "ShippingDeliveryTime",
+    "handlingTime" => [
+        "@type" => "QuantitativeValue",
+        "minValue" => 0,
+        "maxValue" => 1,
+        "unitCode" => "DAY"
+    ],
+    "transitTime" => [
+        "@type" => "QuantitativeValue",
+        "minValue" => 2,
+        "maxValue" => 5,
+        "unitCode" => "DAY"
+    ]
+]
     ],
     "hasMerchantReturnPolicy" => [
         "@type" => "MerchantReturnPolicy",
