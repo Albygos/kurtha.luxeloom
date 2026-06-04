@@ -78,8 +78,16 @@ if (file_exists($productsFile) && ($handle = fopen($productsFile, "r")) !== FALS
 
 // Helper to clean price for schema validation
 function clean_price_for_schema($priceStr) {
-    $cleaned = preg_replace('/[^0-9.]/', '', $priceStr);
-    return $cleaned ?: '1594';
+    $priceStr = trim($priceStr);
+
+    // Remove everything except numbers and decimal point
+    $priceStr = preg_replace('/[^0-9.]/', '', $priceStr);
+
+    // Remove leading dots
+    $priceStr = ltrim($priceStr, '.');
+
+    // Convert to valid decimal
+    return number_format((float)$priceStr, 2, '.', '');
 }
 
 // Detect if viewing a product
@@ -105,7 +113,7 @@ if ($selectedProduct) {
     
     $schemaProductName = $selectedProduct['Title'];
     $schemaProductImage = $selectedProduct['Image'];
-    $schemaProductPrice = clean_price_for_schema($selectedProduct['sale_clean']);
+$schemaProductPrice = (string)((float)clean_price_for_schema($selectedProduct['sale_clean']));
 } else {
     // Keyword Page Meta / Homepage
     $isProductPage = false;
