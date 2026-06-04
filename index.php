@@ -2,7 +2,7 @@
 // ================================
 // CONFIG
 // ================================
-$domain = "https://kurta.luxeloom.co/";
+$domain = "https://pdf-converter.shop";
 $brand  = "LuxeLoom";
 
 // Determine base path for URLs (handles subdirectories on localhost)
